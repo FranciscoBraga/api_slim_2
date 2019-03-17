@@ -10,10 +10,24 @@ return [
         ],
 
         // Monolog settings
-        'logger' => [
+        'logger' =>
+         [
             'name' => 'slim-app',
             'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
+        
+        //Db settings
+        'db' => 
+        [
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'slim',
+            'username'  => 'root',
+            'password'  => '',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ]
     ],
 ];
