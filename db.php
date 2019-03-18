@@ -28,7 +28,7 @@ $schema->create($tabela, function($table){
     $table->text('descricao');
     $table->decimal('preco', 11,2);
     $table->string('fabricante',60);
-    $table->date('dt_criacao');
+    $table->timestamps();
 });
 
 //criando produtos
@@ -37,7 +37,9 @@ $db->table($tabela)->insert([
     'descricao'=> 'tipo 1',
     'preco'=> 15.00,
     'fabricante' => 'Tio Ico',
-    'dt_criacao'=> '2019-03-17'
+    'created_at' => '2018-03-19',
+    'updated_at' => '2018-03-19'
+
 ]);
 
 $db->table($tabela)->insert([
@@ -45,5 +47,7 @@ $db->table($tabela)->insert([
  'descricao'=> 'tipo 1',
  'preco'=> 8.00,
  'fabricante' => 'Carioca',
- 'dt_criacao'=> '2019-03-17'
+ 'created_at' => '2018-03-19',
+  'updated_at' => '2018-03-19'
+
 ]);
