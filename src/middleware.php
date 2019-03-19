@@ -2,6 +2,14 @@
 // Application middleware
 
 // e.g: $app->add(new \Slim\Csrf\Guard);
+//middleware  para 
+$app->add(new Tuupola\Middleware\JwtAuthentication([
+    "header" => "Authorization",/* cabecalho padrão*/
+    "regexp" => "/(.*)/",
+    "path" => "/api", /* or ["/api", "/admin"] */
+    "ignore" => ["/api/token"],
+    "secret" => $container->get('settings')['secretKey']
+]));
 //middleware para solicitação feita para usuário
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
