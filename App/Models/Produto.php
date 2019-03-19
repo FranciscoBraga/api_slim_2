@@ -1,7 +1,7 @@
 <?
 
 namespace App\Models;
-use illuminate\database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
